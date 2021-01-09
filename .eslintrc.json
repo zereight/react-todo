@@ -1,5 +1,25 @@
 {
-  "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended", "airbnb"],
-  "rules": { "prettier/prettier": "error" }
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"extends": [
+		"airbnb",
+		"prettier/react",
+		"eslint:recommended",
+		"plugin:prettier/recommended"
+	],
+	"rules": {
+		"react/jsx-filename-extension": [
+			"error",
+			{
+				"extensions": [".js", ".jsx"]
+			}
+		],
+		"react/jsx-curly-brace-presence": 1,
+		"no-console": 0,
+		"no-unused-vars": 1,
+		"import/prefer-default-export": 1
+	}
 }
