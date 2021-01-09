@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { isWhiteSpace } from './utils';
 
 function TodoInput() {
 	const [todoText, setTodoText] = useState('');
 
+	useEffect(() => {
+		console.log(todoText);
+	}, [todoText]);
+
 	const onChange = (e) => {
 		setTodoText(e.target.value);
-		console.log(todoText);
 	};
 
-	const onClick = (e) => {
+	const onClick = () => {
+		if (todoText.length === 0 || isWhiteSpace(todoText)) {
+			alert('내용을 입력해주세요.');
+			return;
+		}
 		// addTodo
+		console.log(todoText);
 	};
 
 	return (
