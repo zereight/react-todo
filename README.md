@@ -10,5 +10,5 @@ React연습의 대표적인 예제인 간단한 To-Do 프로젝트
 -   [ ] To Do 리스트에 추가될 때에는 미완료 처리가 기본값이어야 한다.
 -   [ ] 완료 체크 박스를 클릭 시, 완료 상태가 토글된다.
 -   [x] To Do에는 빈 문자열을 입력할 수 없다.
--   [ ] localStorage에 To Do 리스트 정보를 write할 수 있어야 한다.
--   [ ] localStorage에서 To Do 리스트 정보를 read할 수 있어야 한다.
+-   [x] localStorage에 To Do 리스트 정보를 write할 수 있어야 한다.
+-   [x] localStorage에서 To Do 리스트 정보를 read할 수 있어야 한다.
