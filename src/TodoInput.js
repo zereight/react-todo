@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { isWhiteSpace } from './utils';
 
 function TodoInput() {
 	const [todoText, setTodoText] = useState('');
 
-	useEffect(() => {
-		console.log(todoText);
-	}, [todoText]);
+	// useEffect(() => {
+	// 	console.log(todoText);
+	// }, [todoText]);
 
 	const onChange = (e) => {
 		setTodoText(e.target.value);
@@ -18,7 +18,6 @@ function TodoInput() {
 			return;
 		}
 		// addTodo
-		console.log(todoText);
 	};
 
 	return (
