@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { isWhiteSpace } from './utils';
 
-function TodoInput() {
+function TodoInput({ addTodoList }) {
 	const [todoText, setTodoText] = useState('');
-
-	// useEffect(() => {
-	// 	console.log(todoText);
-	// }, [todoText]);
 
 	const onChange = (e) => {
 		setTodoText(e.target.value);
@@ -15,9 +12,10 @@ function TodoInput() {
 	const onClick = () => {
 		if (todoText.length === 0 || isWhiteSpace(todoText)) {
 			alert('내용을 입력해주세요.');
-			return;
+		} else {
+			// addTodo
+			addTodoList(todoText);
 		}
-		// addTodo
 	};
 
 	return (
@@ -31,5 +29,9 @@ function TodoInput() {
 		</div>
 	);
 }
+
+TodoInput.propTypes = {
+	addTodoList: PropTypes.func.isRequired,
+};
 
 export default TodoInput;

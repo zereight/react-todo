@@ -10,7 +10,7 @@ function Todo({ id, text }) {
 	);
 }
 
-function TodoList() {
+function TodoList({ todoList }) {
 	return (
 		<div>
 			{todoList.map((todo) => (
@@ -23,6 +23,10 @@ function TodoList() {
 Todo.propTypes = {
 	id: PropTypes.number.isRequired,
 	text: PropTypes.string.isRequired,
+};
+
+TodoList.propTypes = {
+	todoList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default TodoList;
