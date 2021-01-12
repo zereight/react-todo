@@ -9,13 +9,15 @@ function TodoInput({ addTodoList }) {
 		setTodoText(e.target.value);
 	};
 
-	const onClick = () => {
+	const onClick = (e) => {
 		if (todoText.length === 0 || isWhiteSpace(todoText)) {
 			alert('내용을 입력해주세요.');
 		} else {
 			// addTodo
 			addTodoList(todoText);
 		}
+		e.target.previousSibling.value = '';
+		setTodoText('');
 	};
 
 	return (
