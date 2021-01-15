@@ -22,11 +22,27 @@ function App() {
 		setIdCount(idCount + 1);
 	};
 
+	const findTodoIndex = (list, id) => {
+		return list.findIndex((e) => e.id === id);
+	};
+
+	const toggleCompleted = (e) => {
+		const id = parseInt(e.target.id.split('#')[1], 10);
+		const newTodoList = todoList;
+		const targetIndex = findTodoIndex(newTodoList, id);
+		newTodoList[targetIndex].isCompleted = !newTodoList[targetIndex]
+			.isCompleted;
+		setTodoList(newTodoList);
+	};
+
 	return (
 		<div className="App">
 			<div className="todoArea">
 				<TodoInput addTodoList={addTodoList} />
-				<TodoList todoList={todoList} />
+				<TodoList
+					todoList={todoList}
+					toggleCompleted={toggleCompleted}
+				/>
 			</div>
 		</div>
 	);
