@@ -27,8 +27,8 @@ function App() {
 	};
 
 	const toggleCompleted = (e) => {
-		const id = parseInt(e.target.id.split('#')[1], 10);
-		const newTodoList = todoList;
+		const id = parseInt(e.target.id, 10);
+		const newTodoList = [...todoList];
 		const targetIndex = findTodoIndex(newTodoList, id);
 		newTodoList[targetIndex].isCompleted = !newTodoList[targetIndex]
 			.isCompleted;
